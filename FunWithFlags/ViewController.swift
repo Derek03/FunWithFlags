@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate/*, UIPickerViewData
     @IBOutlet weak var countrySelector: UIPickerView!
     @IBOutlet weak var flagImages: UIImageView!
     @IBOutlet weak var testLabel: UILabel!
-    private var countryArray = [String]()
+    private var countryArray: [String] = []
     private var countryArray2 = ["test", "test2"]
     private var rowSelected = 0
     
