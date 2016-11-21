@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "721C7C541B6EC637DFAEE2C7DFE366EED43119EC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "721C7C541B6EC637DFAEE2C7DFE366EED43119EC" : 9223372036854775807,
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "36C412C1-71AC-4BB3-B865-EAF5238C799A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "721C7C541B6EC637DFAEE2C7DFE366EED43119EC" : "FunWithFlags\/",
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : "FunWithFlags\/AlamofireImage\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FunWithFlags",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FunWithFlags.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Derek03\/FunWithFlags.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "721C7C541B6EC637DFAEE2C7DFE366EED43119EC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/AlamofireImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86"
+    }
+  ]
+}

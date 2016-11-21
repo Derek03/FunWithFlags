@@ -8,33 +8,36 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
-class ViewController: UIViewController, UIPickerViewDelegate/*, UIPickerViewDataSource*/ {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var countrySelector: UIPickerView!
-    @IBOutlet weak var flagImages: UIImageView!
-    @IBOutlet weak var testLabel: UILabel!
     private var countryArray: [String] = []
-    private var countryArray2 = ["test", "test2"]
+    private var abbreviation: [String] = []
     private var rowSelected = 0
+    private var flag: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //countrySelector.dataSource = self
         Alamofire.request("https://restcountries.eu/rest/v1/all").responseJSON { response in
             if let JSON = response.result.value {
                 for country in JSON as! [Dictionary<String, AnyObject>] {
                     self.countryArray.append(country["name"] as! String)
+                    self.abbreviation.append(country["alpha2Code"] as! String)
                 }
                 print(self.countryArray)
                 print(self.countryArray.count)
-                print(self.countryArray[1])
+                print(self.abbreviation)
+                print(self.abbreviation.count)
+                self.countrySelector.reloadAllComponents()
             }
         }
         
         countrySelector.delegate = self
+        countrySelector.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +50,6 @@ class ViewController: UIViewController, UIPickerViewDelegate/*, UIPickerViewData
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print(countryArray.count)
         return countryArray.count
     }
     
@@ -55,5 +57,24 @@ class ViewController: UIViewController, UIPickerViewDelegate/*, UIPickerViewData
         rowSelected = row
     }
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func getFlag(_ code: String) {
+        let URL = "http://www.geognos.com/api/en/countries/flag/"+code+".png"
+        print(URL)
+        Alamofire.request(URL).responseImage { response in
+            if let PNG = response.result.value {
+                self.flag = PNG
+            }
+        }
+    }
+    
+    @IBAction func flagButtonPress(_ sender: AnyObject) {
+        getFlag(abbreviation[rowSelected])
+        let vc = FlagController()
+        vc.flagImage.image =
+    }
 }
 

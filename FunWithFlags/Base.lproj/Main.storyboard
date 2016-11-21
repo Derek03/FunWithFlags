@@ -18,16 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h">
-                                <frame key="frameInset" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jly-Qi-Gc6">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-p9-RYH">
+                                <state key="normal" title="See Flag"/>
+                                <connections>
+                                    <action selector="flagButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4w-vP-q3e"/>
+                                    <segue destination="aVl-qS-1JF" kind="presentation" id="uQM-06-KcG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bnt-p9-RYH" firstAttribute="top" secondItem="iig-ys-e6h" secondAttribute="bottom" constant="42" id="0Mf-qs-qPQ"/>
+                            <constraint firstItem="iig-ys-e6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WTB-EW-jdP"/>
+                            <constraint firstItem="iig-ys-e6h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Yhy-VI-Y4a"/>
+                            <constraint firstItem="Bnt-p9-RYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="emj-db-gNq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="countrySelector" destination="iig-ys-e6h" id="Vo6-LU-DXX"/>
@@ -37,6 +43,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.799999999999997" y="124.58770614692655"/>
+        </scene>
+        <!--Flag Controller-->
+        <scene sceneID="PcI-5f-FtL">
+            <objects>
+                <viewController id="aVl-qS-1JF" customClass="FlagController" customModule="FunWithFlags" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s5L-N4-mSR"/>
+                        <viewControllerLayoutGuide type="bottom" id="eGC-o5-3Sc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zop-5m-Ebu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN7-LK-mdZ">
+                                <frame key="frameInset" minX="139" minY="531" width="96" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="Done:" destination="aVl-qS-1JF" eventType="touchUpInside" id="fhY-Uj-aG9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jly-Qi-Gc6">
+                                <frame key="frameInset" minY="116" width="375" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eGC-o5-3Sc" firstAttribute="top" secondItem="eN7-LK-mdZ" secondAttribute="bottom" constant="59" id="97o-KI-MfL"/>
+                            <constraint firstItem="eN7-LK-mdZ" firstAttribute="centerX" secondItem="zop-5m-Ebu" secondAttribute="centerX" id="xHW-4a-Ej4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flagImage" destination="Jly-Qi-Gc6" id="PnK-on-s3O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxQ-Qh-6fA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="959.37031484257875"/>
         </scene>
     </scenes>
 </document>

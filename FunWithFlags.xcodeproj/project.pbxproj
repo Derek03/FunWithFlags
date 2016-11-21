@@ -14,6 +14,7 @@
 		6C28FB931DDF9399004744EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C28FB911DDF9399004744EA /* LaunchScreen.storyboard */; };
 		6C28FB9E1DDF9399004744EA /* FunWithFlagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28FB9D1DDF9399004744EA /* FunWithFlagsTests.swift */; };
 		6C28FBA91DDF9399004744EA /* FunWithFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28FBA81DDF9399004744EA /* FunWithFlagsUITests.swift */; };
+		6C6DE9271DE3B613007EEE24 /* FlagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DE9261DE3B613007EEE24 /* FlagController.swift */; };
 		D831291932B24D159F6DEA9F /* Pods_FunWithFlags.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60343200D38A44F928E66AD /* Pods_FunWithFlags.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		6C28FBA41DDF9399004744EA /* FunWithFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunWithFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C28FBA81DDF9399004744EA /* FunWithFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunWithFlagsUITests.swift; sourceTree = "<group>"; };
 		6C28FBAA1DDF9399004744EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6DE9261DE3B613007EEE24 /* FlagController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagController.swift; sourceTree = "<group>"; };
 		9069EC0C98417CA4732F4FF7 /* Pods-FunWithFlags.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunWithFlags.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunWithFlags/Pods-FunWithFlags.release.xcconfig"; sourceTree = "<group>"; };
 		A60343200D38A44F928E66AD /* Pods_FunWithFlags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunWithFlags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				6C28FB8F1DDF9399004744EA /* Assets.xcassets */,
 				6C28FB911DDF9399004744EA /* LaunchScreen.storyboard */,
 				6C28FB941DDF9399004744EA /* Info.plist */,
+				6C6DE9261DE3B613007EEE24 /* FlagController.swift */,
 			);
 			path = FunWithFlags;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C28FB8B1DDF9399004744EA /* ViewController.swift in Sources */,
+				6C6DE9271DE3B613007EEE24 /* FlagController.swift in Sources */,
 				6C28FB891DDF9399004744EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
