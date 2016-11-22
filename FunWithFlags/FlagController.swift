@@ -9,31 +9,21 @@
 import UIKit
 
 class FlagController: UIViewController {
-
-    @IBOutlet weak var flagImage: UIImageView!
+    
+    var recievedImage: UIImage? = nil
+    @IBOutlet weak var flagView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        flagView.image = recievedImage
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func Done(_ sender: UIButton) {
+    @IBAction func done(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
 }

@@ -12,6 +12,7 @@ import AlamofireImage
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var flagView: UIImageView!
     @IBOutlet weak var countrySelector: UIPickerView!
     private var countryArray: [String] = []
     private var abbreviation: [String] = []
@@ -28,10 +29,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.countryArray.append(country["name"] as! String)
                     self.abbreviation.append(country["alpha2Code"] as! String)
                 }
-                print(self.countryArray)
-                print(self.countryArray.count)
-                print(self.abbreviation)
-                print(self.abbreviation.count)
                 self.countrySelector.reloadAllComponents()
             }
         }
@@ -63,18 +60,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func getFlag(_ code: String) {
         let URL = "http://www.geognos.com/api/en/countries/flag/"+code+".png"
-        print(URL)
         Alamofire.request(URL).responseImage { response in
             if let PNG = response.result.value {
-                self.flag = PNG
+                self.flagView.image = PNG
             }
         }
     }
     
-    @IBAction func flagButtonPress(_ sender: AnyObject) {
+    @IBAction func flagButtonPress(_ sender: UIButton) {
         getFlag(abbreviation[rowSelected])
-        let vc = FlagController()
-        vc.flagImage.image =
+        
     }
+    
 }
 
