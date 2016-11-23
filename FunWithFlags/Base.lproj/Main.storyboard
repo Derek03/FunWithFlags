@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h">
-                                <rect key="frame" x="27.5" y="20" width="320" height="216"/>
-                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-p9-RYH">
-                                <rect key="frame" x="158" y="278" width="59" height="30"/>
                                 <state key="normal" title="See Flag"/>
                                 <connections>
                                     <action selector="flagButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4w-vP-q3e"/>
+                                    <segue destination="587-kG-tAI" kind="presentation" identifier="flagSegue" id="L2G-ZB-cGi"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vmA-uk-Em3">
-                                <rect key="frame" x="0.0" y="449" width="375" height="218"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="218" id="BLQ-g7-R8z"/>
                                     <constraint firstAttribute="width" constant="375" id="Eym-ts-YeK"/>
@@ -60,6 +54,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.799999999999997" y="124.58770614692655"/>
+        </scene>
+        <!--Flag Controller-->
+        <scene sceneID="Jlc-kl-CHP">
+            <objects>
+                <viewController id="587-kG-tAI" customClass="FlagController" customModule="FunWithFlags" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q5O-uI-TYV"/>
+                        <viewControllerLayoutGuide type="bottom" id="gMv-n0-CWO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hN9-j3-teI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-vT-zmU">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vja-vT-zmU" secondAttribute="height" multiplier="375:218" id="0lz-ax-HTJ"/>
+                                    <constraint firstAttribute="width" constant="375" id="CVh-vb-PdJ"/>
+                                    <constraint firstAttribute="height" constant="218" id="VFK-Lr-sbg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AK-wL-7aa">
+                                <frame key="frameInset" minX="143" minY="542" width="89" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="587-kG-tAI" eventType="touchUpInside" id="R3n-he-1xs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-3d-SF7">
+                                <frame key="frameInset" minX="139" minY="59" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vja-vT-zmU" firstAttribute="top" secondItem="Q5O-uI-TYV" secondAttribute="bottom" constant="178" id="Et8-sM-5nX"/>
+                            <constraint firstItem="Vja-vT-zmU" firstAttribute="leading" secondItem="hN9-j3-teI" secondAttribute="leading" id="Qp1-2N-VIb"/>
+                            <constraint firstItem="Vja-vT-zmU" firstAttribute="centerX" secondItem="hN9-j3-teI" secondAttribute="centerX" id="Z7O-Jv-4Vh"/>
+                            <constraint firstAttribute="trailing" secondItem="Vja-vT-zmU" secondAttribute="trailing" id="fiX-o9-gfG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flagView" destination="Vja-vT-zmU" id="5Gh-4o-gMd"/>
+                        <outlet property="text" destination="qrd-3d-SF7" id="U8v-Ze-OUm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGb-gu-Kcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65" y="935"/>
         </scene>
     </scenes>
 </document>

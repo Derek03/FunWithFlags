@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private var abbreviation: [String] = []
     private var rowSelected = 0
     private var flag: UIImage? = nil
+    private var test: String = "Test"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countryArray[row]
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -52,6 +54,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         rowSelected = row
+        getFlag(abbreviation[rowSelected])
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -68,9 +71,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func flagButtonPress(_ sender: UIButton) {
-        getFlag(abbreviation[rowSelected])
-        
+        performSegue(withIdentifier: "flagSegue", sender: self.flag)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "flagSegue") {
+            let fc = segue.destination as! FlagController;
+            fc.recievedImage = sender as? UIImage
+        }
+    }
 }
 

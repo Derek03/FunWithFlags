@@ -12,6 +12,7 @@ class FlagController: UIViewController {
     
     var recievedImage: UIImage? = nil
     @IBOutlet weak var flagView: UIImageView!
+    @IBOutlet weak var text: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
