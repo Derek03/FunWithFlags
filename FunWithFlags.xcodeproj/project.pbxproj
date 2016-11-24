@@ -223,7 +223,7 @@
 				TargetAttributes = {
 					6C28FB841DDF9398004744EA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = N6RP3H788Z;
+						DevelopmentTeam = 9N2NBYXBQ6;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -496,7 +496,8 @@
 			baseConfigurationReference = 4B795BC606C74D02D272A3CD /* Pods-FunWithFlags.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6RP3H788Z;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9N2NBYXBQ6;
 				INFOPLIST_FILE = FunWithFlags/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,7 +512,8 @@
 			baseConfigurationReference = 9069EC0C98417CA4732F4FF7 /* Pods-FunWithFlags.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6RP3H788Z;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9N2NBYXBQ6;
 				INFOPLIST_FILE = FunWithFlags/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

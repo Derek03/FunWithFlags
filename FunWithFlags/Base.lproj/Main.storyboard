@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,25 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h">
                                 <rect key="frame" x="27.5" y="64" width="320" height="216"/>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vmA-uk-Em3">
-                                <rect key="frame" x="0.0" y="449" width="375" height="218"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="218" id="BLQ-g7-R8z"/>
-                                    <constraint firstAttribute="width" constant="375" id="Eym-ts-YeK"/>
-                                    <constraint firstAttribute="width" secondItem="vmA-uk-Em3" secondAttribute="height" multiplier="375:218" id="iAc-wF-pMa"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vmA-uk-Em3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6qZ-Hj-btV"/>
+                            <constraint firstItem="iig-ys-e6h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="82b-3Y-eNo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iig-ys-e6h" secondAttribute="trailing" id="HFZ-bG-fgd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iig-ys-e6h" secondAttribute="bottom" id="Ot9-YU-fFj"/>
                             <constraint firstItem="iig-ys-e6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WTB-EW-jdP"/>
-                            <constraint firstItem="iig-ys-e6h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Yhy-VI-Y4a"/>
-                            <constraint firstAttribute="trailing" secondItem="vmA-uk-Em3" secondAttribute="trailing" id="aHS-gV-bat"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vmA-uk-Em3" secondAttribute="bottom" id="nLS-wS-dYJ"/>
+                            <constraint firstItem="iig-ys-e6h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xaa-sn-ly3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cUb-w0-BMk">
@@ -52,7 +45,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="countrySelector" destination="iig-ys-e6h" id="Vo6-LU-DXX"/>
-                        <outlet property="flagView" destination="vmA-uk-Em3" id="a7b-7X-yYd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,7 +72,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vja-vT-zmU" firstAttribute="top" secondItem="Q5O-uI-TYV" secondAttribute="bottom" constant="178" id="Et8-sM-5nX"/>
                             <constraint firstItem="Vja-vT-zmU" firstAttribute="leading" secondItem="hN9-j3-teI" secondAttribute="leading" id="Qp1-2N-VIb"/>
