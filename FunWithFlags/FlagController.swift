@@ -12,7 +12,6 @@ class FlagController: UIViewController {
     
     var recievedImage: UIImage? = nil
     @IBOutlet weak var flagView: UIImageView!
-    @IBOutlet weak var text: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +21,5 @@ class FlagController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func done(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
     }
 }

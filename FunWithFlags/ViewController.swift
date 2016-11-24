@@ -65,19 +65,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let URL = "http://www.geognos.com/api/en/countries/flag/"+code+".png"
         Alamofire.request(URL).responseImage { response in
             if let PNG = response.result.value {
-                self.flagView.image = PNG
+                self.flag = PNG
             }
         }
     }
     
     @IBAction func flagButtonPress(_ sender: UIButton) {
-        performSegue(withIdentifier: "flagSegue", sender: self.flag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "flagSegue") {
             let fc = segue.destination as! FlagController;
-            fc.recievedImage = sender as? UIImage
+            fc.recievedImage = self.flag
         }
     }
 }

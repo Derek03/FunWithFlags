@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dZs-gj-376">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-p9-RYH">
-                                <state key="normal" title="See Flag"/>
-                                <connections>
-                                    <action selector="flagButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4w-vP-q3e"/>
-                                    <segue destination="587-kG-tAI" kind="presentation" identifier="flagSegue" id="L2G-ZB-cGi"/>
-                                </connections>
-                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iig-ys-e6h">
+                                <rect key="frame" x="27.5" y="64" width="320" height="216"/>
+                            </pickerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vmA-uk-Em3">
+                                <rect key="frame" x="0.0" y="449" width="375" height="218"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="218" id="BLQ-g7-R8z"/>
                                     <constraint firstAttribute="width" constant="375" id="Eym-ts-YeK"/>
@@ -37,15 +36,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bnt-p9-RYH" firstAttribute="top" secondItem="iig-ys-e6h" secondAttribute="bottom" constant="42" id="0Mf-qs-qPQ"/>
                             <constraint firstItem="vmA-uk-Em3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6qZ-Hj-btV"/>
                             <constraint firstItem="iig-ys-e6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WTB-EW-jdP"/>
                             <constraint firstItem="iig-ys-e6h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Yhy-VI-Y4a"/>
                             <constraint firstAttribute="trailing" secondItem="vmA-uk-Em3" secondAttribute="trailing" id="aHS-gV-bat"/>
-                            <constraint firstItem="Bnt-p9-RYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="emj-db-gNq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vmA-uk-Em3" secondAttribute="bottom" id="nLS-wS-dYJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cUb-w0-BMk">
+                        <barButtonItem key="leftBarButtonItem" title="See Flag" id="zsp-eV-dOz">
+                            <connections>
+                                <segue destination="587-kG-tAI" kind="show" identifier="flagSegue" id="qU1-mt-vRY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countrySelector" destination="iig-ys-e6h" id="Vo6-LU-DXX"/>
                         <outlet property="flagView" destination="vmA-uk-Em3" id="a7b-7X-yYd"/>
@@ -53,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.799999999999997" y="124.58770614692655"/>
+            <point key="canvasLocation" x="1004" y="125"/>
         </scene>
         <!--Flag Controller-->
         <scene sceneID="Jlc-kl-CHP">
@@ -68,28 +72,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-vT-zmU">
+                                <rect key="frame" x="0.0" y="242" width="375" height="218"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vja-vT-zmU" secondAttribute="height" multiplier="375:218" id="0lz-ax-HTJ"/>
                                     <constraint firstAttribute="width" constant="375" id="CVh-vb-PdJ"/>
                                     <constraint firstAttribute="height" constant="218" id="VFK-Lr-sbg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AK-wL-7aa">
-                                <frame key="frameInset" minX="143" minY="542" width="89" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="done:" destination="587-kG-tAI" eventType="touchUpInside" id="R3n-he-1xs"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-3d-SF7">
-                                <frame key="frameInset" minX="139" minY="59" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,12 +90,29 @@
                     </view>
                     <connections>
                         <outlet property="flagView" destination="Vja-vT-zmU" id="5Gh-4o-gMd"/>
-                        <outlet property="text" destination="qrd-3d-SF7" id="U8v-Ze-OUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGb-gu-Kcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="935"/>
+            <point key="canvasLocation" x="1894" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EA2-f6-ZZV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZs-gj-376" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4JG-KU-GbC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Nx8-U0-7R2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeh-cA-0Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>
